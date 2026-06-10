@@ -19,4 +19,5 @@ public class MenuLogico {
     public boolean esBisiesto(int año) { 
         return (año % 4 == 0 && año % 100 != 0) || (año % 400 == 0); 
     }
+    public String estadoAcademico(double nota) { return nota >= 60 ? "Aprobado" : "Reprobado"; }
 }
