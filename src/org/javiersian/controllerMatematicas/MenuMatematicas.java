@@ -33,6 +33,9 @@ public class MenuMatematicas {
     public int restoDivision(int dividendo, int divisor) {
     return dividendo % divisor;
 }
+    public int potenciaAlCubo(int numero) {
+    return (int) Math.pow(numero, 3);
+}
     
     private void menuMatematicas() {
     int subOpcion = 0;
