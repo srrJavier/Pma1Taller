@@ -15,4 +15,6 @@ public class MenuLogico {
     public boolean loginSimple(String user, String pass) { 
         return user.equals("admin") && pass.equals("1234"); 
     }
+    public int mayorDeDos(int a, int b) { return Math.max(a, b); }
+    
 }
