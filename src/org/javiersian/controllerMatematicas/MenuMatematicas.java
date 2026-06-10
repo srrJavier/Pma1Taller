@@ -27,6 +27,9 @@ public class MenuMatematicas {
     public double calcularHipotenusa(double catetoA, double catetoB) {
     return Math.sqrt(Math.pow(catetoA, 2) + Math.pow(catetoB, 2));
 }
+    public int diasAMinutos(int dias) {
+    return dias * 24 * 60;
+}
     
     private void menuMatematicas() {
     int subOpcion = 0;
