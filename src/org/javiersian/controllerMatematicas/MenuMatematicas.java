@@ -30,6 +30,9 @@ public class MenuMatematicas {
     public int diasAMinutos(int dias) {
     return dias * 24 * 60;
 }
+    public int restoDivision(int dividendo, int divisor) {
+    return dividendo % divisor;
+}
     
     private void menuMatematicas() {
     int subOpcion = 0;
