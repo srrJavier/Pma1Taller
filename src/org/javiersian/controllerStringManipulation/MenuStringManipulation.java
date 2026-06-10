@@ -23,4 +23,5 @@ public class MenuStringManipulation {
     public String repetidorPalabras(String palabra, int veces) { 
         return palabra.repeat(veces); 
     }
+    public boolean validadorPassword(String pass) { return pass.length() >= 8; }
 }
