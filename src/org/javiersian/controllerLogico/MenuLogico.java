@@ -23,4 +23,5 @@ public class MenuLogico {
     public boolean esTriangulo(double a, double b, double c) { 
         return (a + b > c) && (a + c > b) && (b + c > a); 
     }
+    public boolean comparadorCadenas(String s1, String s2) { return s1.equals(s2); }
 }
