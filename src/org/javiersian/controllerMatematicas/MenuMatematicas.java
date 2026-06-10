@@ -12,6 +12,10 @@ public class MenuMatematicas {
     public double areaTriangulo(double base, double altura) {
     return (base * altura) / 2.0;
 }
+    public double promedioAcademico(double nota1, double nota2, double nota3) {
+    return (nota1 + nota2 + nota3) / 3.0;
+}
+    
     private void menuMatematicas() {
     int subOpcion = 0;
     do {
@@ -54,6 +58,18 @@ public class MenuMatematicas {
                 
                 double area = mate.areaTriangulo(base, altura);
                 System.out.println("El área del triángulo es: " + area);
+                break;
+                case 3:
+                System.out.println("\n[3] Promedio Académico");
+                System.out.print("Nota 1: ");
+                double n1 = scanner.nextDouble();
+                System.out.print("Nota 2: ");
+                double n2 = scanner.nextDouble();
+                System.out.print("Nota 3: ");
+                double n3 = scanner.nextDouble();
+                
+                double promedio = mate.promedioAcademico(n1, n2, n3);
+                System.out.println("El promedio es: " + promedio);
                 break;
             case 11:
                 System.out.println("Regresando al menú principal...");
