@@ -24,4 +24,8 @@ public class MenuStringManipulation {
         return palabra.repeat(veces); 
     }
     public boolean validadorPassword(String pass) { return pass.length() >= 8; }
+    public String generadorEmail(String nom, String ape, String dom) {
+        return nom.toLowerCase() + "." + ape.toLowerCase() + "@" + dom;
+    }
+
 }
