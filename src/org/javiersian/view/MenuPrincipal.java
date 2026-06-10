@@ -6,11 +6,11 @@ import org.javiersian.controllerMatematicas.MenuMatematicas;
 
 public class MenuPrincipal {
     private Scanner scanner;
-    private MenuMatematicas mate;
+    private MenuMatematicas menuMatematicas;
 
     public MenuPrincipal() {
         scanner = new Scanner(System.in);
-        mate = new MenuMatematicas();
+        menuMatematicas = new MenuMatematicas();
     }
     public void mostrarMenu() {
         int opcion = 0;
@@ -29,7 +29,7 @@ public class MenuPrincipal {
 
             switch (opcion) {
                 case 1:
-                    menuMatematicas();
+                    System.out.println("Selecciona ejercicio 1-10");
                     break;
                 case 4:
                     System.out.println("Saliendo del sistema...");
@@ -39,32 +39,6 @@ public class MenuPrincipal {
             }
         } while (opcion != 4);
     }
+ }
+    
 
-    private void menuMatematicas() {
-        int subOpcion = 0;
-        do {
-            System.out.println("\n--- CÁLCULO NUMÉRICO (1-10) ---");
-            System.out.println("1. Calculadora de Salario");
-            System.out.println("11. Regresar");
-            System.out.print("Seleccione una operación: ");
-            
-            subOpcion = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (subOpcion) {
-                case 1:
-                    System.out.print("Horas trabajadas: ");
-                    double horas = scanner.nextDouble();
-                    System.out.print("Pago por hora: ");
-                    double pago = scanner.nextDouble();
-                    System.out.println("Salario: " + mate.calcularSalario(horas, pago));
-                    break;
-                case 11:
-                    System.out.println("Regresando al menú principal...");
-                    break;
-                default:
-                    System.out.println("Opción inválida.");
-            }
-        } while (subOpcion != 11);
-    }
-}
