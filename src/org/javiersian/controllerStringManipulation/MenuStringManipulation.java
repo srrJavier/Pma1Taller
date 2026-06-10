@@ -10,4 +10,10 @@ public class MenuStringManipulation {
         c = Character.toLowerCase(c);
         return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'); 
     }
+    public String extractorIniciales(String nombreCompleto) {
+        String[] partes = nombreCompleto.split(" ");
+        String iniciales = "";
+        for(String parte : partes) iniciales += parte.charAt(0);
+        return iniciales.toUpperCase();
+    }
 }
