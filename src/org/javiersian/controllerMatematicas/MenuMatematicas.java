@@ -15,6 +15,9 @@ public class MenuMatematicas {
     public double promedioAcademico(double nota1, double nota2, double nota3) {
     return (nota1 + nota2 + nota3) / 3.0;
 }
+    public double convertidorTemperatura(double celsius) {
+    return (celsius * (9.0 / 5.0)) + 32;
+}
     
     private void menuMatematicas() {
     int subOpcion = 0;
@@ -70,6 +73,12 @@ public class MenuMatematicas {
                 
                 double promedio = mate.promedioAcademico(n1, n2, n3);
                 System.out.println("El promedio es: " + promedio);
+                break;
+                case 4:
+                System.out.println("\n[4] Convertidor de Temperatura");
+                System.out.print("Ingrese grados Celsius: ");
+                double celsius = scanner.nextDouble();
+                System.out.println("Equivalente en Fahrenheit: " + mate.convertidorTemperatura(celsius));
                 break;
             case 11:
                 System.out.println("Regresando al menú principal...");
