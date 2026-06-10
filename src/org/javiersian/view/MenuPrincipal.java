@@ -1,15 +1,17 @@
 package org.javiersian.view;
-
 import java.util.Scanner;
 import org.javiersian.controllerMatematicas.MenuMatematicas;
+import org.javiersian.controllerStringManipulation.MenuStringManipulation;
 
 public class MenuPrincipal {
     private Scanner scanner;
     private MenuMatematicas menuMatematicas;
+    private MenuStringManipulation menuString;
 
     public MenuPrincipal() {
         scanner = new Scanner(System.in);
         menuMatematicas = new MenuMatematicas();
+        menuString = new MenuStringManipulation();
     }
 
     public void mostrarMenu() {
@@ -30,6 +32,9 @@ public class MenuPrincipal {
             switch (opcion) {
                 case 1:
                     menuMatematicas(); 
+                    break;
+                case 2:
+                    menuCadenas();
                     break;
                 case 4:
                     System.out.println("Saliendo del sistema...");
@@ -116,6 +121,80 @@ public class MenuPrincipal {
             }
         } while (subOpcion != 11); 
     }
+    private void menuCadenas() {
+        int subOpcion = 0;
+        do {
+            System.out.println("\n--- MANIPULACIÓN DE CADENAS (11-20) ---");
+            System.out.println("11. Concatenar Nombre");
+            System.out.println("12. Contador de Longitud");
+            System.out.println("13. Inversor de Texto");
+            System.out.println("14. Detector de Vocales");
+            System.out.println("15. Extractor de Iniciales");
+            System.out.println("16. Mayusculas");
+            System.out.println("17. Conversor Binario");
+            System.out.println("18. Repetidor de palabras");
+            System.out.println("19. Validar COntraseña");
+            System.out.println("20. Generador de Email");
+            System.out.print("Seleccione una opción: ");
+            
+            subOpcion = scanner.nextInt();
+            scanner.nextLine(); 
+
+            switch (subOpcion) {
+                case 11:
+                    System.out.print("Nombre: "); String n = scanner.nextLine();
+                    System.out.print("Apellido: "); String a = scanner.nextLine();
+                    System.out.println("Resultado: " + menuString.concatenarNombre(n, a));
+                    break;
+                case 12:
+                    System.out.print("Texto: "); String t = scanner.nextLine();
+                    System.out.println("Longitud: " + menuString.contadorLongitud(t));
+                    break;
+                case 13:
+                    System.out.print("Texto: "); String inv = scanner.nextLine();
+                    System.out.println("Invertido: " + menuString.inversorTexto(inv));
+                    break;
+                case 14:
+                    System.out.print("Carácter: "); char c = scanner.nextLine().charAt(0);
+                    System.out.println("¿Es vocal?: " + (menuString.detectorVocales(c) ? "Sí" : "No"));
+                    break;
+                case 15:
+                    System.out.print("Nombre completo: "); String nom = scanner.nextLine();
+                        System.out.println("Iniciales: " + menuString.extractorIniciales(nom));
+                    break;
+                case 16:
+                    System.out.print("Texto: "); String txt = scanner.nextLine();
+                    System.out.println("En mayúsculas: " + menuString.normalizarMayusculas(txt));
+                    break;
+                case 17:
+                    System.out.print("Ingrese '1' o '0': "); String bin = scanner.nextLine();
+                    System.out.println("Estado: " + menuString.conversorBinario(bin));
+                    break;
+                case 18:
+                    System.out.print("Palabra: "); String p = scanner.nextLine();
+                    System.out.print("Veces: "); int num = scanner.nextInt();
+                    System.out.println("Resultado: " + menuString.repetidorPalabras(p, num));
+                    break;
+                case 19:
+                    System.out.print("Password: "); String pass = scanner.nextLine();
+                    System.out.println("¿Es segura?: " + (menuString.validadorPassword(pass) ? "Sí" : "No"));
+                    break;
+                case 20:
+                    System.out.print("Nombre: "); String nEmail = scanner.nextLine();
+                    System.out.print("Apellido: "); String aEmail = scanner.nextLine();
+                    System.out.print("Dominio: "); String dom = scanner.nextLine();
+                    System.out.println("Email: " + menuString.generadorEmail(nEmail, aEmail, dom));
+                    break;
+                case 21:
+                    System.out.println("Regresando al menú principal...");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
+        } while (subOpcion != 21);
+    }
+
+
 }
      
 
