@@ -11,4 +11,5 @@ public class MenuLogico {
             default -> "Color no válido";
         };
     }
+    public boolean enRango(int num, int min, int max) { return num >= min && num <= max; }
 }
