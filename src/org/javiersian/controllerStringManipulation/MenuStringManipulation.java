@@ -20,4 +20,7 @@ public class MenuStringManipulation {
     public String conversorBinario(String binario) {
         return binario.equals("1") ? "Encendido" : "Apagado";
     }
+    public String repetidorPalabras(String palabra, int veces) { 
+        return palabra.repeat(veces); 
+    }
 }
