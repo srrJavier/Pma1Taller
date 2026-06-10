@@ -16,5 +16,7 @@ public class MenuLogico {
         return user.equals("admin") && pass.equals("1234"); 
     }
     public int mayorDeDos(int a, int b) { return Math.max(a, b); }
-    
+    public boolean esBisiesto(int año) { 
+        return (año % 4 == 0 && año % 100 != 0) || (año % 400 == 0); 
+    }
 }
