@@ -16,4 +16,8 @@ public class MenuStringManipulation {
         for(String parte : partes) iniciales += parte.charAt(0);
         return iniciales.toUpperCase();
     }
+    public String normalizarMayusculas(String texto) { return texto.toUpperCase(); }
+    public String conversorBinario(String binario) {
+        return binario.equals("1") ? "Encendido" : "Apagado";
+    }
 }
