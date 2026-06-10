@@ -21,6 +21,9 @@ public class MenuMatematicas {
     public double perimetroCirculo(double radio) {
     return 2 * Math.PI * radio;
 }
+    public double volumenCilindro(double radio, double altura) {
+    return Math.PI * Math.pow(radio, 2) * altura;
+}
     
     private void menuMatematicas() {
     int subOpcion = 0;
