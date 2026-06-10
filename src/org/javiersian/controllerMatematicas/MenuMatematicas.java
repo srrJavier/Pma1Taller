@@ -18,6 +18,9 @@ public class MenuMatematicas {
     public double convertidorTemperatura(double celsius) {
     return (celsius * (9.0 / 5.0)) + 32;
 }
+    public double perimetroCirculo(double radio) {
+    return 2 * Math.PI * radio;
+}
     
     private void menuMatematicas() {
     int subOpcion = 0;
@@ -79,6 +82,12 @@ public class MenuMatematicas {
                 System.out.print("Ingrese grados Celsius: ");
                 double celsius = scanner.nextDouble();
                 System.out.println("Equivalente en Fahrenheit: " + mate.convertidorTemperatura(celsius));
+                break;
+                case 5:
+                System.out.println("\n[5] Perímetro de Círculo");
+                System.out.print("Ingrese el radio: ");
+                double radio = scanner.nextDouble();
+                System.out.println("El perímetro es: " + mate.perimetroCirculo(radio));
                 break;
             case 11:
                 System.out.println("Regresando al menú principal...");
