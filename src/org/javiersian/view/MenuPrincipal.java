@@ -2,16 +2,19 @@ package org.javiersian.view;
 import java.util.Scanner;
 import org.javiersian.controllerMatematicas.MenuMatematicas;
 import org.javiersian.controllerStringManipulation.MenuStringManipulation;
+import org.javiersian.controllerLogico.MenuLogico;
 
 public class MenuPrincipal {
     private Scanner scanner;
     private MenuMatematicas menuMatematicas;
     private MenuStringManipulation menuString;
+    private MenuLogico menuLog;
 
     public MenuPrincipal() {
         scanner = new Scanner(System.in);
         menuMatematicas = new MenuMatematicas();
         menuString = new MenuStringManipulation();
+        menuLog = new MenuLogico();
     }
 
     public void mostrarMenu() {
@@ -35,6 +38,9 @@ public class MenuPrincipal {
                     break;
                 case 2:
                     menuCadenas();
+                    break;
+                case 3:
+                    menuLogico();
                     break;
                 case 4:
                     System.out.println("Saliendo del sistema...");
@@ -193,7 +199,81 @@ public class MenuPrincipal {
             }
         } while (subOpcion != 21);
     }
+    private void menuLogico() {
+        int subOpcion = 0;
+        do {
+            System.out.println("\n--- LÓGICA Y BOOLEANOS (21-30) ---");
+            System.out.println("21. Verificador de Edad");
+            System.out.println("22. Número Par");
+            System.out.println("23. Semaforo");
+            System.out.println("24. Rango Numerico");
+            System.out.println("25. Login Simple");
+            System.out.println("26. Mayor de Dos");
+            System.out.println("27. Año Bisiesto");
+            System.out.println("28. Notas Academicas");
+            System.out.println("29. Validar Triangulo");
+            System.out.println("30. Comparador de Strings");
+            System.out.print("Seleccione una opción: ");
+            
+            subOpcion = scanner.nextInt();
+            scanner.nextLine(); 
 
+            switch (subOpcion) {
+                case 21:
+                    System.out.print("Edad: "); int e = scanner.nextInt();
+                    System.out.println("Es mayor: " + (menuLog.verificadorEdad(e) ? "Sí" : "No"));
+                    break;
+                case 22:
+                    System.out.print("Número: "); int n = scanner.nextInt();
+                    System.out.println("¿Es par?: " + (menuLog.esPar(n) ? "Sí" : "No"));
+                    break;
+                case 23:
+                    System.out.print("Color (Rojo/Amarillo/Verde): "); String c = scanner.nextLine();
+                    System.out.println("Acción: " + menuLog.semaforo(c));
+                    break;
+                case 24:
+                    System.out.print("Número: "); int num = scanner.nextInt();
+                    System.out.print("Min: "); int min = scanner.nextInt();
+                    System.out.print("Max: "); int max = scanner.nextInt();
+                    System.out.println("¿En rango?: " + (menuLog.enRango(num, min, max) ? "Sí" : "No"));
+                    break;
+                case 25:
+                    System.out.print("Usuario: "); String u = scanner.nextLine();
+                    System.out.print("Password: "); String pass = scanner.nextLine();
+                    System.out.println("Acceso: " + (menuLog.loginSimple(u, pass) ? "Autorizado" : "Denegado"));
+                    break;
+                case 26:
+                    System.out.print("Num A: "); int a = scanner.nextInt();
+                    System.out.print("Num B: "); int b = scanner.nextInt();
+                    System.out.println("El mayor es: " + menuLog.mayorDeDos(a, b));
+                    break;
+                case 27:
+                    System.out.print("Año: "); int yr = scanner.nextInt();
+                    System.out.println("¿Bisiesto?: " + (menuLog.esBisiesto(yr) ? "Sí" : "No"));
+                    break;
+                case 28:
+                    System.out.print("Nota: "); double nota = scanner.nextDouble();
+                    System.out.println("Estado: " + menuLog.estadoAcademico(nota));
+                    break;
+                case 29:
+                    System.out.print("Lado 1: "); double l1 = scanner.nextDouble();
+                    System.out.print("Lado 2: "); double l2 = scanner.nextDouble();
+                    System.out.print("Lado 3: "); double l3 = scanner.nextDouble();
+                    System.out.println("¿Es triángulo?: " + (menuLog.esTriangulo(l1, l2, l3) ? "Sí" : "No"));
+                    break;
+                case 30:
+                    System.out.print("Cadena 1: "); String s1 = scanner.nextLine();
+                    System.out.print("Cadena 2: "); String s2 = scanner.nextLine();
+                    System.out.println("¿Son iguales?: " + (menuLog.comparadorCadenas(s1, s2) ? "Sí" : "No"));
+                    break;
+                case 31:
+                    System.out.println("Regresando...");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
+        } while (subOpcion != 31);
+    }
 
 }
      
