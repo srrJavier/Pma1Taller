@@ -20,4 +20,7 @@ public class MenuLogico {
         return (año % 4 == 0 && año % 100 != 0) || (año % 400 == 0); 
     }
     public String estadoAcademico(double nota) { return nota >= 60 ? "Aprobado" : "Reprobado"; }
+    public boolean esTriangulo(double a, double b, double c) { 
+        return (a + b > c) && (a + c > b) && (b + c > a); 
+    }
 }
