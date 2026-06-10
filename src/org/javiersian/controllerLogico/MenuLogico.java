@@ -12,4 +12,7 @@ public class MenuLogico {
         };
     }
     public boolean enRango(int num, int min, int max) { return num >= min && num <= max; }
+    public boolean loginSimple(String user, String pass) { 
+        return user.equals("admin") && pass.equals("1234"); 
+    }
 }
